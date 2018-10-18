@@ -1,21 +1,12 @@
-#include <stdio.h>
-
-void linecount(void);
-
-/* driver */
-int main(void)
-{
-    linecount();
-    return 0;
-}
+#include "charcount.h"
 
 /* charcount -- count characters in standard input */
-void linecount(void)
+void charcount(void)
 {
     char c;
-    int n1 = 0;
+    int nc = 0;
     while ((c = getchar()) != EOF) {
-        n1++;
+        nc++;
     }
-    printf("\n%d\n", n1);
+    printf("%d\n", nc);
 }

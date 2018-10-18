@@ -1,12 +1,4 @@
-#include <stdio.h>
-
-void copy(void);
-
-int main(void)
-{
-    copy();
-    return 0;
-}
+#include "copy.h"
 
 /* copy -- copy input to output */
 void copy(void)

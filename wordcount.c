@@ -1,14 +1,4 @@
-#include <stdio.h>
-#include <stdbool.h>
-
-void wordcount(void);
-
-/* driver */
-int main(void)
-{
-    wordcount();
-    return 0;
-}
+#include "wordcount.h"
 
 /* wordcount -- count words in standard input */
 void wordcount(void)
@@ -25,5 +15,5 @@ void wordcount(void)
             nw++;
         }
     }
-    printf("\n%d\n", nw);
+    printf("%d\n", nw);
 }

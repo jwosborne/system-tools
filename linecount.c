@@ -1,13 +1,4 @@
-#include <stdio.h>
-
-void linecount(void);
-
-/* driver */
-int main(void)
-{
-    linecount();
-    return 0;
-}
+#include "linecount.h"
 
 /* linecount -- count lines in standard input */
 void linecount(void)
@@ -19,6 +10,5 @@ void linecount(void)
             ++nl;
         }
     }
-    printf("\n%d\n", nl);
+    printf("%d\n", nl);
 }
-

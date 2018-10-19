@@ -1,2 +1,6 @@
 # ignore driver file
 main.c
+# ignore any default executables
+a.out
+# ignore any txt files
+*.txt

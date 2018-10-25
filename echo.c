@@ -1,7 +1,8 @@
 #include "echo.h"
 
 /* echo -- echo  command line arguments to output */
-void echo(int argc, char const *argv[]) {
+void echo(int argc, char const *argv[])
+{
     if (argc <= 1) {
         printf("\n");
     }

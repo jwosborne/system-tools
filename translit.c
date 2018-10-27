@@ -35,16 +35,21 @@ void translit(int argc, char const *argv[])
     strcpy(fromset, argv[1]);
     allbut = (argv[1] == NEGATE);
 
-    lastto = strlen(toset) + 1;
+    lastto = strlen(toset);
     squash = (strlen(fromset) > lastto);
+    
     do {
         i = xindex(fromset, c = getchar(), allbut, lastto);
-        // if (squash >= lastto && i >= lastto) { /* squash */
-        //     putchar(toset[lastto]);
-        //     do {
-        //         i = *strchr(fromset, (c = getchar()));
-        //     } while (i < lastto);
-        // }
+        //printf("squash: %d, lastto: %d, i: %d\n", squash, lastto, i);
+        if ((squash) && (i >= lastto) && (lastto > 0)) { /* squash */
+            putchar(toset[lastto-1]);
+            //printf("check\n");
+            do {
+                i = xindex(fromset, c = getchar(), allbut, lastto);
+                //printf("i: %d\n", i);
+            } while(i >= lastto);
+        }
+        //printf("done squash\n");
         if (c != EOF) {
             if (i > 0) { /* translate */
                 putchar(toset[i-1]);
@@ -57,8 +62,8 @@ void translit(int argc, char const *argv[])
     } while (c != EOF);
 }
 
-/* strpos -- find position of character c in string s */
-int strpos(const char * str, int c) {
+/* str_index -- find position of character c in string s */
+int str_index(const char * str, int c) {
     int i;
 
     i = 0;
@@ -80,9 +85,9 @@ int xindex(char *inset, char c, bool allbut, int lastto)
         return 0;
     }
     else if (!allbut) {
-        return (strpos(inset, c));
+        return (str_index(inset, c));
     }
-    else if (strpos(inset, c)) {
+    else if (str_index(inset, c)) {
         return 0;
     }
     else {

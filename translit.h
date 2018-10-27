@@ -26,6 +26,7 @@
 #define MAXSTR 100
 #endif
 
-void translit(int argc, char const *argv[]);
+int str_index(const char * str, int c);
 int xindex(char *inset, char c, bool allbut, int lastto);
+void translit(int argc, char const *argv[]);
 //bool makeset(char *inset, int k, char *outset, int maxset);

@@ -12,7 +12,6 @@ void detab(void)
     while ((c = getchar()) != EOF) {
         if (c == '\t') {
             do {
-                //printf("%d", col);
                 putchar(' ');
                 ++col;    
             } while(!tabpos(col, tabstops));

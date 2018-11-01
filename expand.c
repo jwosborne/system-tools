@@ -4,7 +4,7 @@ void expand(void)
 {
     char c;
     int n;
-    // we need input validation
+    /* we need input validation */
     while ((c = getchar()) != EOF) {
         if (c != WARNING) {
             putchar(c);

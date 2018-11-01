@@ -3,10 +3,9 @@
 #include <stdio.h>
 #endif
 
-#ifndef WARNING
-#define WARNING '~'
+#ifndef PUTREP_H
+#define PUTREP_H
+#include "putrep.h"
 #endif
 
 void compress(void);
-void putrep(int n, char c);
-int min(int x, int y);

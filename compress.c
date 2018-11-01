@@ -3,6 +3,8 @@
 /* compress -- compress standard input */
 void compress(void)
 {
+    static const char WARNING = '~';
+
     int n = 1;
     char c, lastc;
 
@@ -29,37 +31,5 @@ void compress(void)
             putchar(lastc);
         }
         lastc = c;
-    }
-}
-
-/* putrep -- put out representation of run of n 'c's */
-void putrep(int n, char c)
-{
-    const int MAXREP = 52; /* assuming 'A' .. 'Z' */
-    const int THRESH = 4;
-    while ((n >= THRESH) || ((c == WARNING) && (n > 0))) {
-        putchar(WARNING);
-        if (n <= 26) {
-            putchar(min(n, MAXREP) - 1 + 'A');
-        }
-        else {
-            putchar(min(n, MAXREP) - 27 + 'a');
-        }
-        putchar(c);
-        n -= MAXREP;
-    }
-    for (int i = n; i > 0; --i) {
-        putchar(c);
-    }
-}
-
-/* min -- compute minimum of two integers */
-int min(int x, int y) 
-{
-    if (x < y) {
-        return x;
-    }
-    else {
-        return y;
     }
 }

@@ -3,9 +3,9 @@
 /* putrep -- put out representation of run of n 'c's */
 void putrep(int n, char c)
 {
-    static const char WARNING = '~';
     static const int MAXREP = 52; /* assuming 'A' .. 'Z' */
     static const int THRESH = 4;
+
     while ((n >= THRESH) || ((c == WARNING) && (n > 0))) {
         putchar(WARNING);
         if (n <= 26) {

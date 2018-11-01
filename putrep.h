@@ -8,4 +8,8 @@
 #include "min.h"
 #endif
 
+#ifndef WARNING
+#define WARNING '~'
+#endif
+
 void putrep(int n, char c);

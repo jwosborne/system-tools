@@ -5,6 +5,7 @@ void charcount(void)
 {
     char c;
     int nc = 0;
+
     while ((c = getchar()) != EOF) {
         nc++;
     }

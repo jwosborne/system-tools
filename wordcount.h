@@ -8,5 +8,4 @@
 #include <stdbool.h>
 #endif
 
-
 void wordcount(void);

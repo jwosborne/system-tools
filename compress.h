@@ -8,4 +8,6 @@
 #include "putrep.h"
 #endif
 
+/* WARNING defined in putrep.h */
+
 void compress(void);

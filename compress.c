@@ -3,8 +3,6 @@
 /* compress -- compress standard input */
 void compress(void)
 {
-    static const char WARNING = '~';
-
     int n = 1;
     char c, lastc;
 

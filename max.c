@@ -1,6 +1,6 @@
 #include "max.h"
 
-/* min -- compute minimum of two integers */
+/* min -- compute maximum of two integers */
 int max(int x, int y) 
 {
     if (x > y) {
